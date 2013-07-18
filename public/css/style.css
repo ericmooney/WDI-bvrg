@@ -1,0 +1,66 @@
+html,body {
+  height:100%;
+  font-family: sans-serif;
+}
+body {
+  background-color:#fff;
+}
+header {
+  padding:0 20px;
+  overflow:hidden;
+  background:#111;
+  margin:0 0 60px 0;
+}
+h1 {
+  font-size:40px;
+  text-align:center;
+  padding:10px 0;
+  color:#fff;
+  float:left;
+}
+nav {
+  float:right;
+  padding-top:10px;
+}
+nav ul {
+  list-style-type:none;
+}
+nav li {
+  display:inline;
+}
+nav a:link,
+nav a:visited {
+  display:block;
+  font-weight:bold;
+  color:#fff;
+  float:left;
+  line-height:40px;
+  padding:0 10px;
+  text-decoration: none;
+  border-radius:4px;
+  margin-left:10px;
+}
+nav a:hover,
+nav a:active {
+  color:#111;
+  background:white;
+  background:rgba(255,255,255,0.5);
+}
+.today a.today,
+.week a.week {
+  background:white;
+  color:#111;
+}
+.graph {
+  width:auto;
+  height:600px;
+  margin-left:100px;
+  margin-right:100px;
+  box-sizing:border-box;
+}
+.today #beverage_graph_week {
+  display:none;
+}
+.week #beverage_graph_day {
+  display:none;
+}
