@@ -16,6 +16,7 @@ get "/week" do
   erb :index
 end
 
+# the code below acts like an internal API
 get "/beverages.json" do
   '{"data": [
     {"day": "Friday",    "coffee": 3, "water": 2, "soda": 1, "beer": 2 },
