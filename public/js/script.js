@@ -5,10 +5,30 @@ $(document).ready(function(){
       success: function(results){
         var graph_data = $.parseJSON(results).data;
         var body = $('body');
+        var coffee_color = '#6f4e37';
+        var water_color = 'skyblue';
+        var soda_color = '#220C0D';
+        var beer_color = 'gold';
 
         if (bvrg.scope === "week") {
           body.append('<div id="beverage_graph_week" class="graph"></div>');
+
+          Morris.Line({
+            element: 'beverage_graph_week',
+            data: graph_data,
+            xkey: 'day',
+            ykeys: ['coffee', 'water', 'soda', 'beer'],
+            labels: ['coffee', 'water', 'soda', 'beer'],
+            parseTime: false,
+            lineColors: [coffee_color, water_color, soda_color, beer_color],
+            hideHover: true
+          });
+
+
         }
+
+        // day donut chart
+
         if (bvrg.scope === "today") {
 
           body.append('<div id="beverage_graph_day" class="graph"></div>');
@@ -22,7 +42,7 @@ $(document).ready(function(){
               {label: "Beer", value: day_data.beer},
               {label: "Soda", value: day_data.soda}
             ],
-            colors: ['#6f4e37','skyblue','#220C0D', 'gold']
+            colors: [coffee_color, water_color, soda_color, beer_color]
           });
         }
       }
